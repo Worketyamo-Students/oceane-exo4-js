@@ -51,11 +51,49 @@
 
     }
 //exercice 2
-let division = document.querySelectorAll("div")
+//2.2
+let lts= document.getElementById("liste")
+while (lts.firstChild) {
+    lts.removeChild(lts.firstChild);
+}
+
+//2.1
+let division = document.getElementsByClassName("div")
 for (let i = 0;  i< division.length ; i++ ) {
     let p = document.createElement("p")
     p.textContent = "enfant ajoute"
     division[i].appendChild(p)
 }
+//2.3
+let span = document.querySelector("span")
+    while(span.parentElement && span.parentElement.tagName !== "HTML"){
+       span = span.parentElement
+       console.log(span.tagName)
 
+    }
+//2.$
+let divisions = document.getElementsByClassName("div")
+let section = document.createElement("section")
+body.appendChild(section)
+// 2.5
+let struct = document.createElement("div")
+body.appendChild(struct)
+let list = document.createElement("ul")
+struct.appendChild(list)
+for ( let i=0 ; i<3 ; i++){
+    let l = document.createElement("li")
+    list.appendChild(l)
+    l.id = "item-" +i
+    l.className = "item" +i
+
+}
+//exercice 3
+let ul = document.getElementById("nombre")
+for ( let i=0 ; i<ul.length ; i++){
+    let l = document.getElementsByClassName("li")
+    nextElementSibling = l[i+1]
+    previousElementSibling = l[i-1]
+    nextElementSibling.style.backgroundColor = "red"
+
+}
 
